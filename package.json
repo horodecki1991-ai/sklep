@@ -1,0 +1,70 @@
+{
+  "name": "simpay-typescript-api",
+  "author": "Rafał Więcek <r.wiecek@simpay.pl> (https://github.com/DarkGL)",
+  "version": "3.1.0",
+  "description": "SimPay.pl API wrapper",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "ci": "npm run build && npm run check && npm run check-exports && npm run test",
+    "lint": "npx @biomejs/biome lint --write ./src",
+    "format": "npx @biomejs/biome format --write ./src",
+    "check": "npx @biomejs/biome check --write ./src",
+    "build": "tsc --build",
+    "test": "npm run build && vitest run",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "npm run ci"
+  },
+  "keywords": [
+    "simpay",
+    "payment",
+    "db",
+    "api",
+    "directbilling",
+    "sms",
+    "simpay.pl",
+    "payments",
+    "payment-gateway",
+    "payment-gateways",
+    "payment-api",
+    "direct-billing",
+    "sms-payment",
+    "sms-payments",
+    "db-payment",
+    "db-payments",
+    "payment-integration",
+    "online-payments",
+    "mobile-payments",
+    "payment-sdk",
+    "payment-service"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.9"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.2",
+    "@biomejs/biome": "1.9.4",
+    "@changesets/cli": "^2.27.11",
+    "@types/node": "^22.10.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimPaypl/SimPay-API-TypeScript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SimPaypl/SimPay-API-TypeScript/issues"
+  },
+  "homepage": "https://github.com/SimPaypl/SimPay-API-TypeScript#readme",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20.17.0"
+  }
+}
